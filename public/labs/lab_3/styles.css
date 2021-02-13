@@ -1,13 +1,16 @@
 /* Add some css styles based on the tutorial at javascript.info: introduction to browser events
  https://javascript.info/introduction-browser-events */
+  body {
+    background-color: blueviolet;
+  }
  .arrow {
     padding: 0;
-    background: #ddd;
+    background: rgb(54, 250, 4);
     border-radius: 15px;
-    border: 1px solid gray;
+    border: 1px solid rgb(251, 251, 252);
     font-size: 24px;
     line-height: 24px;
-    color: #444;
+    color: rgb(254, 253, 255);
     display: block;
   }
   
@@ -16,7 +19,7 @@
   }
   
   .arrow:hover {
-    background: #ccc;
+    background: rgb(129, 145, 236);
     cursor: pointer;
   }
   
@@ -56,7 +59,8 @@
     position: relative;
     height: 150px;
     width: 500px;
-    border: 1px solid #ccc;
+    background: rgb(243, 208, 12);
+    border: 1px solid rgb(243, 208, 12);
     margin: 50px auto;
   }
   div.gallery {
