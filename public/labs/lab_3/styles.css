@@ -5,12 +5,11 @@
   }
  .arrow {
     padding: 0;
-    background: rgb(54, 250, 4);
-    border-radius: 15px;
-    border: 1px solid rgb(251, 251, 252);
+    background: rgb(72, 247, 180);
+    border-radius: 25px;
+    border-color: 1px solid rgb(51, 110, 238);
     font-size: 24px;
     line-height: 24px;
-    color: rgb(254, 253, 255);
     display: block;
   }
   
@@ -19,7 +18,7 @@
   }
   
   .arrow:hover {
-    background: rgb(129, 145, 236);
+    background: rgb(3, 209, 245);
     cursor: pointer;
   }
   
@@ -35,13 +34,13 @@
   ul img {
     width: 130px;
     height: 130px;
-    display: block; /* removes extra space near images */
+    display: block;
   }
   
   ul li {
-    display: inline-block; /* removes extra space between list items */
+    display: inline-block;
   }
-  /* Custom */
+
   button.arrow {
     position: absolute;
     height: 100px;
@@ -76,5 +75,5 @@
     padding: 0;
     list-style: none;
     font-size: 0;
-    transition: transform 0.35s ease-in-out;
+    transition: transform 0.5s ease-in-out;
   }

@@ -1,9 +1,9 @@
 /* Put your javascript in here */
 const btnPrev = document.querySelector('button.arrow.prev');
     const btnNext = document.querySelector('button.arrow.next');
-    const ul = document.querySelector('div.gallery > ul');
-    const liWidth = document.querySelector('div.gallery ul > li').clientWidth;
-    const limit = ul.querySelectorAll('img').length * liWidth; 
+    const ul = document.querySelector('div.gallery ul');
+    const listWidth = document.querySelector('div.gallery ul > li').clientWidth;
+    const limit = ul.querySelectorAll('img').length * listWidth; 
     
     const count = 3;
     let position = 0;
@@ -11,7 +11,7 @@ const btnPrev = document.querySelector('button.arrow.prev');
     console.log(ul); 
     
     const scrollFn = (isNext) => {
-      const move = position + (count * (isNext ? liWidth : -(liWidth)));
+      const move = position + (count * (isNext ? listWidth : -(listWidth)));
       console.log(move);
       if(move < 0 || move > limit) {
         return;
