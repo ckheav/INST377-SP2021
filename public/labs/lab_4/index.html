@@ -10,51 +10,51 @@
 <body>
     <h1>Christian Kheav's Lab 4</h1>
     <div class="container">
-        <form>
+        <form action="/api" method="post">
           <ul class="flex-outer">
             <li>
-              <label for="first-name">First Name</label>
-              <input type="text" id="first-name">
+              <label for="fname">First Name</label>
+              <input type="text" id="fname" name = "fname">
             </li>
             <li>
-              <label for="last-name">Last Name</label>
-              <input type="text" id="last-name">
+              <label for="lname">Last Name</label>
+              <input type="text" id="lname" name = "lname">
             </li>
             <li>
               <label for="email">Email</label>
-              <input type="email" id="email">
+              <input type="email" id="email" name = "email">
             </li>
             <li>
               <label for="phone">Phone</label>
-              <input type="tel" id="phone">
+              <input type="tel" id="phone" name = "phone">
             </li>
             <li>
-              <label for="Text Field">Text Field</label>
-              <textarea rows="6" id="Text Field" placeholder="This is some default text"></textarea>
+              <label for="message">Message</label>
+              <textarea cols = "33" rows = "5" id="message" name = 'message' placeholder="This is some default text"></textarea>
             </li>
             <li>
               <p>Age</p>
-              <ul class="flex-inner">
+              <ul class="flex-inner" name = "checkbox">
                 <li>
-                  <input type="checkbox" id="eightteen-to-thirtyfive">
-                  <label for="eightteen-to-thirtyfive">18-35</label>
+                    <label for="eightteen-to-thirtyfive">18-35</label>
+                    <input type="checkbox" id="eightteen-to-thirtyfive" name = "eightteen-to-thirtyfive" ></input>
                 </li>
                 <li>
-                  <input type="checkbox" id="thirtyfive-to-fifty">
-                  <label for="thirtyfive-to-fifty">35-50</label>
+                    <label for="thirtyfive-to-fifty">35-50</label>
+                    <input type="checkbox" id="thirtyfive-to-fifty" name = "thirtyfive-to-fifty">
                 </li>
                 <li>
-                  <input type="checkbox" id="fifty-to-sixtyfive">
-                  <label for="fifty-to-sixtyfive">50-65</label>
+                    <label for="fifty-to-sixtyfive">50-65</label>
+                    <input type="checkbox" id="fifty-to-sixtyfive" name = "fifty-to-sixtyfive">
                 </li>
               </ul>
             </li>
             <li>
-              <button type="submit">Submit</button>
+              <button type="submit" class = "button" id ="submit_button" name = "submit_button">Submit form</button>
             </li>
           </ul>
         </form>
-      </div>
+    </div>
     
 </body>
 </html>
