@@ -20,7 +20,10 @@ const liveReloadServer = reload.createServer();
 liveReloadServer.watch(path.join(__dirname, staticFolder));
 
 // Configure express
-app.use(connectReload());
+if (process.env.CONTEXT === 'development') {
+  app.use(connectReload());
+}
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static(staticFolder));
@@ -36,7 +39,7 @@ app.route('/api')
     console.log('GET request detected');
     const data = await fetch('https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json');
     const json = await data.json();
-    console.log('data from fetch', json);
+    console.log('data from fetch', json[0]);
     res.json(json);
   })
   .post(async (req, res) => {
@@ -46,6 +49,17 @@ app.route('/api')
     //res.json({data: dataToSendToFrontEnd});
     res.send("Hello World");
     
+    const data = await fetch('https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json');
+    const json = await data.json();
+
+    fetch('https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json')
+      .then((data) => data.json())
+      .then((data2) => {
+        // do something with your data!
+      })
+      .catch((err) => console.error(err));
+
+    res.json({data: json});
   });
 
 app.listen(port, async () => {
@@ -77,4 +91,10 @@ try {
   console.log('Connection has been established successfully.');
 } catch (error) {
   console.error('Unable to connect to the database:', error);
+if (process.env.CONTEXT === 'development') {
+  liveReloadServer.server.once('connection', () => {
+    setTimeout(() => {
+      liveReloadServer.refresh('/');
+    }, 100);
+  });
 }
