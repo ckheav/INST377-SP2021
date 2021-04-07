@@ -46,11 +46,11 @@ document.addEventListener('DOMContentLoaded', () => {
     if (doodlerBottomSpace > 200) {
       platforms.forEach((platform) => {
         platform.bottom -= 4;
-        let visual = platform.visual;
+        const visual = platform.visual;
         visual.style.bottom = platform.bottom + 'px';
 
         if (platform.bottom < 10) {
-          let firstPlatform = platforms[0].visual;
+          const firstPlatform = platforms[0].visual;
           firstPlatform.classList.remove('platform');
           platforms.shift();
           console.log(platforms);
@@ -80,13 +80,11 @@ document.addEventListener('DOMContentLoaded', () => {
         gameOver();
       }
       platforms.forEach((platform) => {
-        if (
-          doodlerBottomSpace >= platform.bottom &&
+        if (doodlerBottomSpace >= platform.bottom &&
           doodlerBottomSpace <= platform.bottom + 15 &&
           doodlerLeftSpace + 60 >= platform.left &&
           doodlerLeftSpace <= platform.left + 85 &&
-          !isJumping
-        ) {
+          !isJumping) {
           console.log('tick');
           startPoint = doodlerBottomSpace;
           jump();
@@ -136,7 +134,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     isGoingRight = true;
     rightTimerId = setInterval(function () {
-      //changed to 313 to fit doodle image
       if (doodlerLeftSpace <= 313) {
         console.log('going right');
         doodlerLeftSpace += 5;
@@ -152,7 +149,6 @@ document.addEventListener('DOMContentLoaded', () => {
     clearInterval(rightTimerId);
   }
 
-  //assign functions to keyCodes
   function control(e) {
     doodler.style.bottom = doodlerBottomSpace + 'px';
     if (e.key === 'ArrowLeft') {
